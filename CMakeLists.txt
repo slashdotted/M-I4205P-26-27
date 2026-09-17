@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.22)
+project(M-I4205P-26-27)
+set(CMAKE_CXX_STANDARD 17)
+add_subdirectory(S0)
+add_subdirectory(S1)
