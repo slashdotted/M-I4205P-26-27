@@ -1,10 +1,5 @@
 #pragma once
 
-class Foo
-{
-    void bar();
-};
-
 class Fraction // con class visibilità predefinita "private"
 // struct Fraction // con struct visibilità predefinita "public"
 {
