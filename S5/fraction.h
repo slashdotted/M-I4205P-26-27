@@ -23,10 +23,10 @@ public:
     // Fraction operator+(const Fraction &o);
     Fraction operator-(const Fraction &o);
 
-    /* operator double() const
+     explicit operator double() const
      {
          return (double)m_numerator / m_denominator;
-     }*/
+     }
 
     /*double toDouble() const
     {
