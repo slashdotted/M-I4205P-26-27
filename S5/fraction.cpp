@@ -89,3 +89,31 @@ Fraction operator+(const Fraction &a, const Fraction &b)
     temp += b;
     return temp;
 }
+
+Fraction &Fraction::operator*=(const Fraction &o)
+{
+    m_numerator *= o.m_numerator;
+    m_denominator *= o.m_denominator;
+    return *this;
+}
+
+Fraction operator*(const Fraction &a, const Fraction &b)
+{
+    Fraction temp{a};
+    temp *= b;
+    return temp;
+}
+
+Fraction &Fraction::operator/=(const Fraction &o)
+{
+    m_numerator *= o.m_denominator;
+    m_denominator *= o.m_numerator;
+    return *this;
+}
+
+Fraction Fraction::operator/(const Fraction &o)
+{
+    Fraction temp{*this};
+    temp /= o;
+    return temp;
+}

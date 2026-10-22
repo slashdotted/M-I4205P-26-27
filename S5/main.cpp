@@ -58,7 +58,8 @@ int main()
     // Fraction f8{f2 - 3};
     // Fraction f9{3 - f2}; // Questo non compila perché operator- è un metodo di Fraction
 
-    calcola(f1);
+    // calcola(f1);
+    calcola(static_cast<double>(f1)); // Con explicit solo cast espliciti!
     calcola(3.14);
     calcola(3);
     calcola2(3);
@@ -70,4 +71,8 @@ int main()
     // double(f1) + 6 -> int -> F(int)
 
     Fraction fa{f1 + Fraction{6}};
+
+    (f1 + f2 * fa) / f1;
+    // Senza overloading:
+    // div(sum(multiply(f2,fa), f1)),f1);
 }

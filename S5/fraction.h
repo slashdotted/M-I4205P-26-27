@@ -20,13 +20,46 @@ public:
     Fraction &operator+=(const Fraction &o);
     Fraction &operator-=(const Fraction &o);
 
+    Fraction &operator*=(const Fraction &o);
+    Fraction &operator/=(const Fraction &o);
+
     // Fraction operator+(const Fraction &o);
     Fraction operator-(const Fraction &o);
+    Fraction operator/(const Fraction &o);
 
-     explicit operator double() const
-     {
-         return (double)m_numerator / m_denominator;
-     }
+        explicit operator double() const
+    {
+        int i{0};
+        return (double)m_numerator / m_denominator;
+    }
+
+    // Operatore prefix (++f)
+    Fraction &operator++()
+    {
+        return *this += 1;
+    }
+
+    // Operatore postfix (f++)
+    Fraction operator++(int)
+    {
+        auto temp{*this};
+        *this += 1;
+        return temp;
+    }
+
+    // Operatore prefix (--f)
+    Fraction &operator--()
+    {
+        return *this -= 1;
+    }
+
+    // Operatore postfix (f--)
+    Fraction operator--(int)
+    {
+        auto temp{*this};
+        *this -= 1;
+        return temp;
+    }
 
     /*double toDouble() const
     {
@@ -43,3 +76,4 @@ private:
 };
 
 Fraction operator+(const Fraction &a, const Fraction &b);
+Fraction operator*(const Fraction &a, const Fraction &b);
