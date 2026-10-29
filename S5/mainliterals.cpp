@@ -54,8 +54,21 @@ Distance operator""_nm(long double distance)
     return Distance::from_meters(distance * 1852);
 }
 
+Distance operator""_km(unsigned long long distance)
+{
+    return Distance::from_kilometers(distance);
+}
+
+Distance operator""_nm(unsigned long long distance)
+{
+    return Distance::from_meters(distance * 1852);
+}
+
 int main()
 {
-    auto distanza{Distance::from_kilometers(25)};
+    // auto distanza{Distance::from_kilometers(25)};
+    auto distanza{25.0_km};
+    auto distanza2{25_km};
     car_cost(distanza);
+    car_cost(76_km);
 }
