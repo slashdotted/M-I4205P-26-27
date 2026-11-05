@@ -1,0 +1,5 @@
+set(CMAKE_CXX_STANDARD 17)
+add_executable(S6functors functors.cpp)
+add_executable(S6lambdas lambdas.cpp)
+add_executable(S6lambdas2 lambdas2.cpp)
+add_executable(S6esempioLambda esempioLambda.cpp)
